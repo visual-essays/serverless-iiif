@@ -124,7 +124,7 @@ Conditions:
   DistributionCustomDomain:
     Fn::And:
       - Fn::Not:
-          - Fn::Equals: [!Ref CacheDomainName, ""]
+          - Fn::Equals: [!Ref CacheDomainName, "iiif-image.juncture-digital.org"]
       - Fn::Not:
           - Fn::Equals: [!Ref CacheSSLCertificate, ""]
   UseOriginRequest:
