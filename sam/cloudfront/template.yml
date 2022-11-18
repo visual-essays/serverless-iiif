@@ -57,7 +57,7 @@ Parameters:
   CacheDomainName:
     Type: String
     Description: Custom Domain Name for the API Gateway Endpoint or CloudFront Cache
-    Default: ""
+    Default: "iiif-image.juncture-digital.org"
   CacheSSLCertificate:
     Type: String
     Description: ARN of the ACM SSL Certification to use for the API Gateway Endpoint or CloudFront Cache
@@ -124,7 +124,7 @@ Conditions:
   DistributionCustomDomain:
     Fn::And:
       - Fn::Not:
-          - Fn::Equals: [!Ref CacheDomainName, "iiif-image.juncture-digital.org"]
+          - Fn::Equals: [!Ref CacheDomainName, ""]
       - Fn::Not:
           - Fn::Equals: [!Ref CacheSSLCertificate, ""]
   UseOriginRequest:
